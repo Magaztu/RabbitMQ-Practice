@@ -11,6 +11,9 @@ Create a descentralized system where multiple IoT send tasks (eg. updates, image
   - Simulated IoT component, code.
 
 ## Arrangement:
--> -> ->
+IoT Device -> RabbitMQ Producer -> RabbitMQ Queue -> Worker Pool
+
+### Technologies placement:
+
 
 It should... `tbr`
