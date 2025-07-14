@@ -7,13 +7,17 @@ Create a descentralized system where multiple IoT send tasks (eg. updates, image
   - RabbitMQ, working queues.
   - Npm RabbitMQ-client, producers and cosumers.
   - Docker Compose, arrange the containers.
-  - Api with ExpessJS (night discard).
+  - Api with ExpessJS (might discard).
   - Simulated IoT component, code.
 
 ## Arrangement:
 IoT Device -> RabbitMQ Producer -> RabbitMQ Queue -> Worker Pool
 
 ### Technologies placement:
+These will be hosted in dockers:
+  - RabbitMQ client
+  - Worker Pool
+  - IoT Device
 
 
 It should... `tbr`
