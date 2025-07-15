@@ -20,4 +20,5 @@ These will be hosted in dockers:
   - IoT Device
 
 
-It should... `tbr`
+So, long story short, a piece of code will simulate a IoT device generating data and it'll be sent to a RabbitMQ queue for workers to access and process off of.
+`Preliminary idea`: One of the workers could be a monitoring device, using Prometheus(metrics) and Graphana(Dashboard).
