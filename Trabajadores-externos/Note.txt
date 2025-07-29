@@ -1,0 +1,1 @@
+Each one of these needs their very own Dockerfile and sum other stuff.
