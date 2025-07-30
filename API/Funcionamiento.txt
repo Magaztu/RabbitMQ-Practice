@@ -1,0 +1,5 @@
+Probablemente extraiga informacion de cada trabajador y de los productores.
+
+No sé cómo, pero lo averiguaré.
+
+This one should print or show work done every so often.
