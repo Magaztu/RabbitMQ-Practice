@@ -1,15 +1,15 @@
-FROM node:16-slim
+FROM node:18-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY package*.json ./
+COPY package.json package-lock.json* ./
 
 RUN npm install
 
 COPY . .
 
-EXPOSE 3000
-
 RUN npm run build
 
-CMD ["ts-node", "index.ts"]
+EXPOSE 8080
+
+CMD ["npm", "start"]

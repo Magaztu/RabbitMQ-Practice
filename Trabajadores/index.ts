@@ -30,7 +30,7 @@ async function startWorker() {
                 try {
                     if (msg) {
                         // & Parseo
-                        const { id, type, payload } = JSON.parse(msg.body.toString());
+                        const { id, type, payload } = msg.body;
                         
                         // & Deconstrucción del payload
                         const { imageUrl, timestamp } = payload;

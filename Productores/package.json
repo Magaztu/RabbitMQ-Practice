@@ -13,7 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "node-fetch": "^3.3.2",
+    "axios": "^1.11.0",
     "rabbitmq-client": "^5.0.4"
   },
   "devDependencies": {

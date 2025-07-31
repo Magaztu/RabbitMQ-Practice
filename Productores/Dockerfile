@@ -1,15 +1,16 @@
-FROM node:16-slim
+FROM node:18-alpine
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json package-lock.json* ./
 
+# Step 4: Install the dependencies
 RUN npm install
 
 COPY . .
 
 RUN npm run build
 
-EXPOSE 3000
+EXPOSE 8080
 
 CMD ["npm", "start"]
