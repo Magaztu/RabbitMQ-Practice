@@ -1,0 +1,52 @@
+version: '1.0'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    hostname: rabbitmq_host
+    ports:
+      - "5672:5672" # Puerto estándar
+      - "15672:15672" # Puerto para la interfaz web
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    restart: unless-stopped # Como en el exámen wdedeq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+  
+  producers:
+    build:
+      context: ./Productores
+    container_name: producers
+    environment:
+      # Conecta con RabbitMQ usando el nombre del servicio
+      RABBITMQ_URL: amqp://rabbitmq
+    depends_on:
+      - rabbitmq
+    restart: on-failure
+  
+  internal-workers:
+    build:
+      context: ./Trabajadores
+    container_name: internal-workers
+    environment:
+      RABBITMQ_URL: amqp://rabbitmq
+    depends_on:
+      - rabbitmq
+    restart: on-failure
+
+  external-workers:
+    build:
+      context: ./Trabajadores-externos/T-externo-1
+    container_name: external-workers
+    environment:
+      RABBITMQ_URL: amqp://rabbitmq
+    depends_on:
+      - rabbitmq
+    restart: on-failure
+
+volumes:
+  rabbitmq_data:
