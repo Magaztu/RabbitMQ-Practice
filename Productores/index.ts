@@ -1,7 +1,7 @@
 import { sendToQueueWrapper } from './dispositivo_IoT';
 import fetch from 'node-fetch';
 
-const TASK_INTERVAL = 5000;  // Intervalo para enviar tareas (en milisegundos)
+const TASK_INTERVAL = 30000;  // Intervalo para enviar tareas (en milisegundos)
 
 console.log('Iniciando productor IoT...');
 
