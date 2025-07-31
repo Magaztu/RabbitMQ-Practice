@@ -58,8 +58,8 @@ async function startWorker() {
     }
 }
 
-// Axios function to fetch image
-export async function fetchImage(url: string): Promise<Buffer> {
+// ~ AXIOS devuelve un raw output de la imamgen en el url
+async function fetchImage(url: string): Promise<Buffer> {
     try {
         const response = await axios.get(url, { responseType: 'arraybuffer' });
         return Buffer.from(response.data);

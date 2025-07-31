@@ -9,7 +9,7 @@
     "skipLibCheck": true            // Omitir la comprobación de las definiciones de tipos
   },
   "include": [
-    "index.ts",                      // Incluye todos los archivos TS que vayas a usar
+    "index.ts",                      
     "iotDevice.ts"
   ]
 }
