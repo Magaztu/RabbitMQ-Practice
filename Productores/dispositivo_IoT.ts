@@ -18,8 +18,8 @@ export const sendToQueueWrapper = async (task: any) => {
     await pub.send({ exchange: EXCHANGE, routingKey: ROUTING_KEY }, task);
     console.log(`Tarea enviada a la cola: ${JSON.stringify(task)}`);
 
-    await pub.close();
-    await rabbit.close();
+    // await pub.close();
+    // await rabbit.close();
   } catch (error) {
     console.error('Error al enviar tarea a RabbitMQ:', error);
   }
