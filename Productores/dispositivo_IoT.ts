@@ -17,7 +17,7 @@ if(primera_vez){
  // rabbit.exchangeDeclare({ exchange: EXCHANGE, type: 'direct', durable: true }); // ? Pasive: true evita errores de conflicto, es como un if exists de sql
   
  // rabbit.queueBind({ queue: QUEUE_NAME, exchange: EXCHANGE, routingKey: ROUTING_KEY });
-
+  primera_vez = false
 }
 
 const pub = rabbit.createPublisher({

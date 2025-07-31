@@ -2,4 +2,4 @@ Each one of these needs their very own Dockerfile and sum other stuff.
 
 https://www.cloudamqp.com/blog/part4-rabbitmq-for-beginners-exchanges-routing-keys-bindings.html
 
-docker-compose up --scale trabajadores-internos=3 --scale trabajadores-externos=3
+docker-compose up --scale trabajadores=3 --scale trabajadores-externos=3 --scale productores=5

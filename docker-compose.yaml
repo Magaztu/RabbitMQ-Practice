@@ -17,7 +17,7 @@ services:
     build:
       context: ./Productores
       dockerfile: Dockerfile
-    container_name: "productores"
+    # container_name: "productores"
     environment:
       RABBITMQ_URL: "amqp://user:password@rabbitmq:5672"
     depends_on:
@@ -28,7 +28,7 @@ services:
     build:
       context: ./Trabajadores
       dockerfile: Dockerfile
-    container_name: "trabajadores"
+    #container_name: "trabajadores"
     environment:
       RABBITMQ_URL: "amqp://user:password@rabbitmq:5672"
     depends_on:
@@ -39,7 +39,7 @@ services:
     build:
       context: ./Trabajadores-externos/T-externo-1
       dockerfile: Dockerfile
-    container_name: "trabajadores-externos"
+    #container_name: "trabajadores-externos"
     environment:
       RABBITMQ_URL: "amqp://user:password@rabbitmq:5672"
     depends_on:
